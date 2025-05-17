@@ -1,1 +1,1 @@
-This is a test fileChanging this line to check merge conflict with temp branch
+This is a test file
