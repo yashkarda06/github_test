@@ -17,3 +17,8 @@ Commands:
 10.git stash (temply removing files from staging area and moving them to backstage so as to not to commit them yet nor lose them)
 11.git stash pop (bring back changes saved in backstage)
 12.git stash clear (clear those temp changes saved in back stage)
+13.git remote add origin https://github.com/yashkarda06/github_test.git (attach git repo to local)
+14.git remote -v (urls attached to local project folder)
+origin  https://github.com/yashkarda06/github_test.git (fetch)
+origin  https://github.com/yashkarda06/github_test.git (push)
+15.git push origin master (push changes to remote repo)
