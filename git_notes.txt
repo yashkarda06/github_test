@@ -15,3 +15,5 @@ Commands:
 8.git log to check the changes.
 9.git reset 8cce5d71c0d6db9a18db5a7492336196204cdf8c (reverts to certain commit by using hashcode of that commit)
 10.git stash (temply removing files from staging area and moving them to backstage so as to not to commit them yet nor lose them)
+11.git stash pop (bring back changes saved in backstage)
+12.git stash clear (clear those temp changes saved in back stage)
