@@ -10,3 +10,4 @@ Commands:
 3.git init (intialize and empty git repo , it is file which will keep track of changes in the project)
 4.git status (tracks changes, tells us what changes are not in the history of the project)
 5.git add . {[. for all files] [name of file for particular file]} (add files to the history of the project)
+6.git commit -m "message" (commit the changes with a message , changes in the history are stored)
