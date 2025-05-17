@@ -11,3 +11,7 @@ Commands:
 4.git status (tracks changes, tells us what changes are not in the history of the project)
 5.git add . {[. for all files] [name of file for particular file]} (add files to the history of the project)
 6.git commit -m "message" (commit the changes with a message , changes in the history are stored)
+7.git restore --staged (reverts add. and sends it back to untrakced history (red when u use staus command))
+8.git log to check the changes.
+9.git reset 8cce5d71c0d6db9a18db5a7492336196204cdf8c (reverts to certain commit by using hashcode of that commit)
+10.git stash (temply removing files from staging area and moving them to backstage so as to not to commit them yet nor lose them)
