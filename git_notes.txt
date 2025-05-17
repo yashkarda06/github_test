@@ -22,11 +22,15 @@ Commands:
 origin  https://github.com/yashkarda06/github_test.git (fetch)
 origin  https://github.com/yashkarda06/github_test.git (push)
 15.git push origin master (push changes to remote repo)
+16.git clone https://github.com/yashkarda06/commclassroomOP.git
+17.git remote add upstream https://github.com/yashkarda06/commclassroomOP.git
 
 Concepts:
 1. Main/Master is the main codebase, when the code is not yet finalized we make use of branches.
 2. Head (acts like a pointer) is used to identify where the commits are being made.So if head points to a branch (feature)
 then commits are being made to feature branch.
 3. Branches are like parallel universes, they are used to make changes to the code without affecting main code base.
-
+4. Fork: so sometimes we cannot access others project directly but what we can do is clone that repo in our repo and work on it.
+5. So to that we have to fork that repo and run the clone command on that local to get main code base without affecting the main branch.
+6. Convention followed for forked repos is upstream.
 
