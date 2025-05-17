@@ -7,7 +7,7 @@ Intro:
 Commands:
 1.git (some helper)
 2.git --version
-3.git init (intialize and empty git repo , it is file which will keep track of changes in the project)
+3.git init (initialize and empty git repo , it is file which will keep track of changes in the project)
 4.git status (tracks changes, tells us what changes are not in the history of the project)
 5.git add . {[. for all files] [name of file for particular file]} (add files to the history of the project)
 6.git commit -m "message" (commit the changes with a message , changes in the history are stored)
@@ -24,13 +24,36 @@ origin  https://github.com/yashkarda06/github_test.git (push)
 15.git push origin master (push changes to remote repo)
 16.git clone https://github.com/yashkarda06/commclassroomOP.git
 17.git remote add upstream https://github.com/yashkarda06/commclassroomOP.git
+18.git branch Yash (creates a new branch)
+19.git checkout Yash (the header points to branch named yash , so all commits after this command are made on yash branch)
+20.git push origin Yash
+21.git push origin Yash -f (to remove commits from pull request we reset to prev)
+22.git pull upstream/main
 
 Concepts:
 1. Main/Master is the main codebase, when the code is not yet finalized we make use of branches.
-2. Head (acts like a pointer) is used to identify where the commits are being made.So if head points to a branch (feature)
+2. Head (acts like a pointer) is used to identify where the commits are being made. So if head points to a branch (feature)
 then commits are being made to feature branch.
 3. Branches are like parallel universes, they are used to make changes to the code without affecting main code base.
 4. Fork: so sometimes we cannot access others project directly but what we can do is clone that repo in our repo and work on it.
 5. So to that we have to fork that repo and run the clone command on that local to get main code base without affecting the main branch.
-6. Convention followed for forked repos is upstream.
+6. Convention followed for forked repos is upstream.(So the forked url is named "origin"(on our local) and from which repo we are forking is named upstream (the main codebase which we dont have access to)).
+7. After we have forked , we create a branch so that whatever changes we are making does not affect the main codebase, then we send a pull request to the main repo's main branch to merge our branch with main.
+8. After u have made changes and committed to your branch then a new pull request is created. There is an issue that one branch can only create a single pull request (so never add commits to main branch).
+9. Don't make 10k commits on one branch only. Create branch for each pull request.
+10. To sync origin main with upstream main u can use either sync fork or u can use the following commands:
+->git checkout main 
+->git fetch --all --prune
+->git reset --hard upstream/main
+->git push origin main
+11.All this can be done with one Single command, see 22.
+12. Whenever we create a new branch it is created from head so be careful while created branch (check which branch u are currently in)
+13. If we want to squash multiple commits into a single commit we can:
+-> git rebase -i c3164c5542fc3e77e5861eff83938032d5b35f3a
+This will open a file with hashes for commits above hash u gave in the command, there we have an option to merge by doing pick (commit which should be there) and s (commits to be squashed)
+pick commit 1
+s commit 2
+s commit 3
+So it will be like commit 1 (commit 2 + commit 3)
+14. When users make changes to the same line or portion of the code we have manually resolve the merge conflicts.
 
