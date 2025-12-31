@@ -13,6 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: sample step
+        run: echo "Hello Yash"
       - name: Set environment name
         run: |
           if [ "${GITHUB_REF_NAME}" = "master" ]; then
