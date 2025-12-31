@@ -5,3 +5,4 @@ Practice push branch: change meant for PR
 Resolved: master + rebase-demo change
 rebase-i demo line 1
 rebase-i demo line 2
+Feature A change
