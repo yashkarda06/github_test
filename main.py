@@ -1,6 +1,5 @@
-import os 
+import os
 
-print("Hello from main.py")
-print("Running inside Docker container")
-print("ENV VALUE:", os.getenv("MY_ENV_VAR"))
-
+print("App started")
+print("ENV:", os.getenv("ENVIRONMENT"))
+print("VERSION:", os.getenv("VERSION"))

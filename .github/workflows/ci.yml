@@ -1,15 +1,35 @@
-name: Docker CI
-on: push
+name: Simulated Deploy Pipeline
+
+on:
+  push:
+    branches:
+      - master
+      - develop
 
 jobs:
-  docker-build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
+      - name: Set environment name
+        run: |
+          if [ "${GITHUB_REF_NAME}" = "master" ]; then
+            echo "ENVIRONMENT=prod" >> $GITHUB_ENV
+          else
+            echo "ENVIRONMENT=dev" >> $GITHUB_ENV
+          fi
+
+      - name: Set version
+        run: echo "VERSION=${GITHUB_SHA::7}" >> $GITHUB_ENV
 
       - name: Build Docker image
-        run: docker build -t my-python-app .
+        run: docker build -t demo-app:${{ env.VERSION }} .
 
-      - name: Run Docker container
-        run: docker run -e MY_ENV_VAR=yashkarda06 my-python-app
+      - name: Deploy (simulate)
+        run: |
+          docker run \
+            -e ENVIRONMENT=${{ env.ENVIRONMENT }} \
+            -e VERSION=${{ env.VERSION }} \
+            demo-app:${{ env.VERSION }}
