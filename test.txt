@@ -3,3 +3,5 @@ This change is made by master branch
 Practice branch: first change in test.txt
 Practice push branch: change meant for PR
 Resolved: master + rebase-demo change
+rebase-i demo line 1
+rebase-i demo line 2
