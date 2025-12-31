@@ -2,4 +2,4 @@ This is a test file
 This change is made by master branch
 Practice branch: first change in test.txt
 Practice push branch: change meant for PR
-Master update: simulated teammate change
+Resolved: master + rebase-demo change
