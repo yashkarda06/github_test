@@ -57,3 +57,66 @@ s commit 3
 So it will be like commit 1 (commit 2 + commit 3)
 14. When users make changes to the same line or portion of the code we have manually resolve the merge conflicts.
 
+Commands:
+->Daily Workflow
+git checkout master
+git pull
+git checkout -b feature-name
+# make changes
+git add .
+git commit -m "Clear message"
+git push -u origin feature-name
+
+->Status and inspection
+git status          # current state (MOST USED)
+git log --oneline   # short history
+git diff            # unstaged changes
+git diff --staged   # staged changes
+git branch          # local branches
+git branch -a       # all branches
+git branch -vv      # tracking info
+
+-> Branching
+git checkout -b branch-name     # create + switch
+git switch -c branch-name       # modern alternative
+git checkout master             # switch branch
+git branch -d branch-name       # delete local
+git push origin --delete name   # delete remote
+
+-> Staging and commits
+git add file.txt
+git add .
+git restore --staged file.txt   # unstage
+git commit -m "message"
+
+-> Merge and rebase
+git merge branch-name           # merge into current branch
+git rebase master               # rebase current branch onto master
+git rebase -i HEAD~N            # interactive rebase
+
+->conflicts
+
+# edit files
+git add resolved-file
+git commit              # merge
+git rebase --continue   # rebase
+git merge --abort
+git rebase --abort
+
+-> push/pull
+
+git push
+git push -u origin branch
+git push --force-with-lease
+git pull
+git pull --rebase
+
+-> Cleanup
+
+git fetch --prune
+git config --global fetch.prune true
+
+-> Panic button
+
+git reflog
+git reset --hard HEAD@{n}
